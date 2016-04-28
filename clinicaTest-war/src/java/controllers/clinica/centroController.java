@@ -21,6 +21,7 @@ import javax.faces.bean.ViewScoped;
  */
 @ManagedBean
 @ViewScoped
+//muajajajajajajaj
 public class centroController implements Serializable {
 
     List<Centro> centroList;
