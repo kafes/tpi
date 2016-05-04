@@ -14,20 +14,20 @@ import javax.ejb.Local;
  * @author kari
  */
 @Local
-public interface CentroFacadeLocal {
+public interface CentroFacadeLocal extends AbstractFacadeInterface<Centro> {
+//
+//    boolean create(Centro centro);
+//
+//    boolean edit(Centro centro);
+//
+//    boolean remove(Centro centro);
+//
+//    Centro find(Object id);
+//
+//    List<Centro> findAll();
+//
+//    List<Centro> findRange(int[] range);
+//
+//    int count();
 
-    boolean create(Centro centro);
-
-    boolean edit(Centro centro);
-
-    boolean remove(Centro centro);
-
-    Centro find(Object id);
-
-    List<Centro> findAll();
-
-    List<Centro> findRange(int[] range);
-
-    int count();
-    
 }

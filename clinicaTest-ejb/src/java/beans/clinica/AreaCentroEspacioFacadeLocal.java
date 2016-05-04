@@ -14,20 +14,20 @@ import javax.ejb.Local;
  * @author kari
  */
 @Local
-public interface AreaCentroEspacioFacadeLocal {
-
-    boolean create(AreaCentroEspacio areaCentroEspacio);
-
-    boolean edit(AreaCentroEspacio areaCentroEspacio);
-
-    boolean remove(AreaCentroEspacio areaCentroEspacio);
-
-    AreaCentroEspacio find(Object id);
-
-    List<AreaCentroEspacio> findAll();
-
-    List<AreaCentroEspacio> findRange(int[] range);
-
-    int count();
+public interface AreaCentroEspacioFacadeLocal extends AbstractFacadeInterface<AreaCentroEspacio>{
+//
+//    boolean create(AreaCentroEspacio areaCentroEspacio);
+//
+//    boolean edit(AreaCentroEspacio areaCentroEspacio);
+//
+//    boolean remove(AreaCentroEspacio areaCentroEspacio);
+//
+//    AreaCentroEspacio find(Object id);
+//
+//    List<AreaCentroEspacio> findAll();
+//
+//    List<AreaCentroEspacio> findRange(int[] range);
+//
+//    int count();
     
 }
