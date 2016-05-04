@@ -14,19 +14,20 @@ import javax.ejb.Local;
  * @author kari
  */
 @Local
-public interface PacienteFacadeLocal extends AbstractFacadeInterface<Paciente> {
-//    boolean create(Paciente paciente);
-//
-//    boolean edit(Paciente paciente);
-//
-//    boolean remove(Paciente paciente);
-//
-//    Paciente find(Object id);
-//
-//    List<Paciente> findAll();
-//
-//    List<Paciente> findRange(int[] range);
-//
-//    int count();
+public interface PacienteFacadeLocal {
+
+    boolean create(Paciente paciente);
+
+    boolean edit(Paciente paciente);
+
+    boolean remove(Paciente paciente);
+
+    Paciente find(Object id);
+
+    List<Paciente> findAll();
+
+    List<Paciente> findRange(int[] range);
+
+    int count();
     
 }

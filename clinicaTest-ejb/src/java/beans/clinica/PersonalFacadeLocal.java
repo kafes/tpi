@@ -14,20 +14,20 @@ import javax.ejb.Local;
  * @author kari
  */
 @Local
-public interface PersonalFacadeLocal extends AbstractFacadeInterface<Personal> {
+public interface PersonalFacadeLocal {
 
-//    boolean create(Personal personal);
-//
-//    boolean edit(Personal personal);
-//
-//    boolean remove(Personal personal);
-//
-//    Personal find(Object id);
-//
-//    List<Personal> findAll();
-//
-//    List<Personal> findRange(int[] range);
-//
-//    int count();
+    boolean create(Personal personal);
+
+    boolean edit(Personal personal);
+
+    boolean remove(Personal personal);
+
+    Personal find(Object id);
+
+    List<Personal> findAll();
+
+    List<Personal> findRange(int[] range);
+
+    int count();
     
 }
