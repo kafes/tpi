@@ -5,7 +5,12 @@
  */
 package generador.clinica;
 
-import beans.clinica.AbstractFacade;
+import beans.clinica.AbstractFacadeInterface;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import org.primefaces.model.LazyDataModel;
+import org.primefaces.model.SortOrder;
 
 /**
  *
@@ -13,5 +18,23 @@ import beans.clinica.AbstractFacade;
  */
 public abstract class DefaultGenerator<T> {
 
-    public  AbstractFacade<T> facade;
+    private LazyDataModel<T> model;
+    private T registro;
+
+    public LazyDataModel<T> getModel() {
+        return model;
+    }
+
+    public void setModel(LazyDataModel<T> model) {
+        this.model = model;
+    }
+
+    public T getRegistro() {
+        return registro;
+    }
+
+    public void setRegistro(T registro) {
+        this.registro = registro;
+    }
+
 }

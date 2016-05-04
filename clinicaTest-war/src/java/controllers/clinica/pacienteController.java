@@ -7,13 +7,12 @@ package controllers.clinica;
 
 import beans.clinica.PacienteFacadeLocal;
 import entidades.tpi.clinica.Paciente;
+import generador.clinica.DefaultGenerator;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -27,7 +26,7 @@ import org.primefaces.model.SortOrder;
  */
 @Named
 @ViewScoped
-public class pacienteController implements Serializable {
+public class pacienteController extends DefaultGenerator<Paciente> implements Serializable {
 
     @Inject
     private PacienteFacadeLocal pacienteEJB;
@@ -98,6 +97,22 @@ public class pacienteController implements Serializable {
         this.model = model;
     }
 
+    public PacienteFacadeLocal getPacienteEJB() {
+        return pacienteEJB;
+    }
+
+    public void setPacienteEJB(PacienteFacadeLocal pacienteEJB) {
+        this.pacienteEJB = pacienteEJB;
+    }
+
+    public List<Paciente> getPacienteList() {
+        return pacienteList;
+    }
+
+    public void setPacienteList(List<Paciente> pacienteList) {
+        this.pacienteList = pacienteList;
+    }
+    
     public Paciente getRegistro() {
         return registro;
     }
@@ -107,9 +122,10 @@ public class pacienteController implements Serializable {
     }
 
     public void onRowSelect(SelectEvent event) {
-        Paciente pa=(Paciente) event.getObject();
-        pa=model.getRowData(pa.getIdPaciente().toString());
-        this.registro=pa;
+        Paciente pa = (Paciente) event.getObject();
+        pa = model.getRowData(pa.getIdPaciente().toString());
+        this.registro = pa;
     }
 
+    
 }
