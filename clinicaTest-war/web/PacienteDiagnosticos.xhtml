@@ -17,12 +17,23 @@
             <p:inputText id="dB" value="#{pacienteABcontroller.b}"/>
             <br/>
             <br/>
-            <p:commandButton value="Enviar" update=":frmTest"/>
+            <p:commandButton value="Enviar" update=":frmTest:table" actionListener="#{pacienteABcontroller.buttonAction(actionEvent)}"/>
         </h:form>
 
         <h:form id="frmTest">
-            <p:dataTable value="">
-            
+            <p:dataTable id="table" value="#{pacienteABcontroller.pacienteList}" var="r">
+                <p:column headerText="N°" >
+                    <h:outputText value="#{r.idPaciente}"/>
+                </p:column>
+                <p:column headerText="Nombres">
+                    <h:outputText value="#{r.nombres}"/>
+                </p:column>
+                <p:column headerText="Apellidos">
+                    <h:outputText value="#{r.apellidos}"/>
+                </p:column>
+                <p:column headerText="Fecha de Nacimiento">
+                    <h:outputText value="#{r.fechaNacimiento}"/>
+                </p:column>
             </p:dataTable>
         </h:form>
     </h:body>

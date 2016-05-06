@@ -7,6 +7,7 @@ package controllers.clinica;
 
 import beans.clinica.PacienteFacadeLocal;
 import entidades.tpi.clinica.Paciente;
+import java.awt.event.ActionEvent;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -35,7 +36,12 @@ public class pacienteABcontroller implements Serializable {
     public void llenarLista() {
 
     }
-
+/*Si en la vista hubiera utilizado un action nada más no un actionListener entonces acá no recibiría ningún parámetro y funciona
+    siempre*/
+     public void buttonAction(ActionEvent actionEvent) {
+        this.pacienteList=pacienteEJB.DiagnosticadosConAPeroNoConB(A, B);
+    }
+     
     public List<Paciente> getPacienteList() {
         return pacienteList;
     }
