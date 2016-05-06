@@ -11,10 +11,10 @@
         <p:dataTable  lazy="true" paginator="true" first="0" value="#{centroController.model}" var="c"
                       rows="10" sortBy="id" selectionMode="single" selection="#{centroController.registro}" 
                       rowKey="#{c.idCentro}" >
-            <p:ajax event="rowSelect" listener="#{centroController.onRowSelect}" update=":frmEdit"/>
+            <p:ajax event="rowSelect" listener="#{centroController.onRowSelect}" />
             <p:column headerText="N°">
                 <h:outputText value="#{c.idCentro}"/>
-            </p:column>
+            </p:column>z
             <p:column headerText="Nombre Corto">
                 <h:outputText value="#{c.nombreCorto}" />
             </p:column>
@@ -31,7 +31,9 @@
         <p:button value="Editar Centro" rendered="true" onclick=""/>
         <br/>
         <br/>
-        <h:panelGrid 
+        <h:form id='frmTest'>
+            <h:outputText value="#{centroController.registro.nombreCorto}"
+        </h:form>
     </h:body>
 </html>
 
