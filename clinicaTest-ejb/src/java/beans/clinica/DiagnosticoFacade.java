@@ -6,9 +6,14 @@
 package beans.clinica;
 
 import entidades.tpi.clinica.Diagnostico;
+import entidades.tpi.clinica.DiagnosticoFrecuenciaTurno;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -28,5 +33,16 @@ public class DiagnosticoFacade extends AbstractFacade<Diagnostico> implements Di
     public DiagnosticoFacade() {
         super(Diagnostico.class);
     }
-    
+
+    public List<DiagnosticoFrecuenciaTurno> DiagnosticoByTurno() {
+        try {
+            if (em != null) {
+                Query query = this.em.createNamedQuery("Diagnostico.findFrecuenciaByTurno");
+                return query.getResultList();
+            }
+        } catch (Exception e) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage(), e);
+        }
+        return null;
+    }
 }

@@ -6,6 +6,7 @@
 package controllers.clinica;
 
 import beans.clinica.PersonalFacadeLocal;
+import entidades.tpi.clinica.Centro;
 import entidades.tpi.clinica.Personal;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,10 +27,11 @@ import org.primefaces.model.SortOrder;
 @ViewScoped
 public class personalController implements Serializable {
 
-    List<Personal> personalList;
+    private List<Personal> personalList;
     @Inject
-    PersonalFacadeLocal personalEJB;
-    LazyDataModel<Personal> model;
+    private PersonalFacadeLocal personalEJB;
+    private LazyDataModel<Personal> model;
+    private Centro registro;
 
     @PostConstruct
     public void llenarLista() {
@@ -70,4 +72,20 @@ public class personalController implements Serializable {
         this.personalList = personalList;
     }
 
+    public LazyDataModel<Personal> getModel() {
+        return model;
+    }
+
+    public void setModel(LazyDataModel<Personal> model) {
+        this.model = model;
+    }
+
+    public Centro getRegistro() {
+        return registro;
+    }
+
+    public void setRegistro(Centro registro) {
+        this.registro = registro;
+    }
+    
 }
